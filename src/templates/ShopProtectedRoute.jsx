@@ -24,7 +24,7 @@ function ShopProtectedRoute({ children }) {
     console.error("Invalid token:", error);
   }
 
-  return <Navigate to="/shop/login" replace />;
+  return <Navigate to="/login" replace />;
 }
 
 ShopProtectedRoute.propTypes = {

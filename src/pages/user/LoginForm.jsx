@@ -49,7 +49,6 @@ function LoginForm({postUrl, navigateUrl}) {
   return (
     <div className="w-full">
       <form
-        name="login"
         onSubmit={handleSubmit(handleLogin)}
         className="flex flex-col gap-4 mb-2"
       >
@@ -57,32 +56,30 @@ function LoginForm({postUrl, navigateUrl}) {
           type="email"
           name="email"
           placeholder="enter your email"
-          register={{
-            ...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Invalid email address"
-              }
-            }),
-            autoComplete: "username"
-          }}
+          register={register}
           errors={errors}
+          required={{
+            value: true,
+            message: "Email is required"
+          }}
+          pattern={{
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+            message: "Invalid email address"
+          }}
         />
 
         <PasswordInput
           name="password"
-          register={{
-            ...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters"
-              }
-            }),
-            autoComplete: "current-password"
-          }}
+          register={register}
           errors={errors}
+          required={{
+            value: true,
+            message: "Password is required"
+          }}
+          minLength={{
+            value: 6,
+            message: "Password must be at least 6 characters"
+          }}
         />
 
         <Button

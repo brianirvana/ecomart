@@ -4,7 +4,7 @@ import Button from "../atoms/Button";
 function SignupNavigators() {
   return (
     <>
-      <Link to="/user/signup">
+      <Link to="/signup">
         <Button
           type="button"
           label="Become Buyer"

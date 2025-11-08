@@ -22,7 +22,7 @@ function UserSignupForm() {
     const user = await createUser(`${CUSTOMER_URL}/signup`, data);
     if (user) {
       reset();
-      navigate("/user/login");
+      navigate("/login");
     }
   }
 

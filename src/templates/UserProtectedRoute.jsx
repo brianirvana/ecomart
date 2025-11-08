@@ -17,7 +17,7 @@ function UserProtectedRoute({ children }) {
     console.error("Invalid token:", error);
   }
 
-  return <Navigate to="/user/login" replace />;
+  return <Navigate to="/login" replace />;
 }
 
 UserProtectedRoute.propTypes = {

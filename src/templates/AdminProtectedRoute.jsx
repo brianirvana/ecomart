@@ -19,7 +19,7 @@ function AdminProtectedRoute({ children }) {
     console.error("Invalid token:", error);
   }
 
-  return <Navigate to="/admin/login" replace />;
+  return <Navigate to="/login" replace />;
 }
 
 AdminProtectedRoute.propTypes = {

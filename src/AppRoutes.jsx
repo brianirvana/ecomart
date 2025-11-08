@@ -38,6 +38,7 @@ import withAdminProtected from "./templates/withAdminProtected";
 import withLayout from "./templates/withLayout";
 import withShopProtected from "./templates/withShopProtected";
 import withUserProtected from "./templates/withUserProtected";
+import withAuthCheck from "./templates/withAuthCheck";
 
 function AppRoutes() {
   return (
@@ -94,17 +95,18 @@ function AppRoutes() {
           path="/shop/user/profile"
           element={withShopProtected(ShopUserProfile)}
         />
+        {/* common route */}
+        <Route path="/" element={withLayout(withAuthCheck(Home))} />
+        
         {/* all user route */}
-        <Route path="/user/signup" element={<UserSignup />} />
-        <Route path="/user/login" element={<UserLogin />} />
+        <Route path="/login" element={<UserLogin />} />
+        <Route path="/signup" element={<UserSignup />} />
         <Route
-          path="/user/profile"
-          element={withUserProtected(CustomerProfile)}
-        />
+           path="/user/profile"
+           element={withUserProtected(CustomerProfile)}
+         />
         <Route path="/user/orders" element={withUserProtected(UserOrders)} />
         <Route path="/user/order/:id" element={withUserProtected(UserOrder)} />
-        {/* common route */}
-        <Route path="/" element={withLayout(Home)} />
         <Route path="carts" element={withLayout(Carts)} />
         <Route path="wishlist" element={withLayout(Wishlist)} />
         <Route path="product/:id" element={withLayout(Product)} />

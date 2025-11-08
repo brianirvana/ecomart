@@ -17,7 +17,7 @@ function UserSignup() {
 
         <UserSignupForm />
 
-        <AuthQueryNavigator currentForm="signup" toForm="/user/login" />
+        <AuthQueryNavigator currentForm="signup" toForm="/" />
 
         {/* <div className="w-full flex items-center gap-2 my-6">
           <span className="flex-1 border-b border-amber-400"></span>

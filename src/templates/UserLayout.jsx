@@ -30,7 +30,7 @@ function UserLayout({ children }) {
           sidebarOpen ? "ml-64 w-[calc(100%-16rem)]" : "ml-0 w-full"
         } relative transition-all duration-200 ease-linear`}
       >
-        <AdminHeader navigateUrl="/user/login" />
+        <AdminHeader navigateUrl="/" />
 
         <div className="pt-[48px] bg-[f5f5f5] dark:bg-slate-800 dark:text-gray-200 min-h-dvh h-full flex flex-col">
           <main className="p-4 flex-1 relative">
