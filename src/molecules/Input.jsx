@@ -20,8 +20,8 @@ function Input({
         name={name}
         id={name}
         placeholder={placeholder}
-        autoComplete="off"
-        {...register(name, { required: required })}
+        autoComplete={register.autoComplete || "off"}
+        {...register}
         className={`${baseStyle} ${className}`}
       />
       {errors[name] && <p className="text-red-600">{errors[name].message}</p>}

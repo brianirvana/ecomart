@@ -12,8 +12,8 @@ function PasswordInput({name, required, register, errors}) {
         name={name}
         id={name}
         placeholder="enter password"
-        autoComplete="off"
-        {...register(name, { required: required })}
+        autoComplete={register.autoComplete || "off"}
+        {...register}
         className="w-full py-2 px-3 rounded-lg bg-transparent border-[1px] outline-none border-gray-400 hover:border-amber-500 hover:shadow-md focus:shadow-md focus:border-amber-400 focus:active:border-amber-400 transition-all duration-200 ease-linear caret-amber-500"
       />
       {errors[name] && <p className="text-red-600">{errors[name].message}</p>}
